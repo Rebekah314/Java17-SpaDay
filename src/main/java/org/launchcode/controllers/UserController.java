@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+import org.launchcode.data.UserData;
 import org.launchcode.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,7 @@ public class UserController {
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
 
         if (verify.equals(user.getPassword())) {
+            UserData.add(user);
             model.addAttribute("user", user);
             return "user/index";
         }
