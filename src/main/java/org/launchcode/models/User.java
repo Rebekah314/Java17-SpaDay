@@ -1,6 +1,9 @@
 package org.launchcode.models;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class User {
+    @NotBlank
     private String username;
     private String email;
     private String password;
