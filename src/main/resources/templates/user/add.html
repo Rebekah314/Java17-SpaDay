@@ -2,30 +2,42 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
   <meta charset="UTF-8">
-  <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+  <link href="../static/styles.css" th:href="@{/styles.css}" rel="stylesheet" />
   <title>Sign Up</title>
 </head>
 <body>
 <form method = 'post' th:action="@{/user}">
-  <label>
-    Username:
-    <input type = 'text' name = 'username' th:value="${username}">
-  </label>
+  <div>
+    <label>
+      Username:
+      <input type = 'text' name = 'username' th:value="${user.username}">
+      <span th:errors="${user.username}"></span>
+    </label>
+  </div>
 
-  <label>
-    Email:
-    <input type = 'email' name = 'email' th:value="${email}">
-  </label>
+  <div>
+    <label>
+      Email:
+      <input type = 'text' name = 'email' th:value="${user.email}">
+      <span th:errors="${user.email}"></span>
+    </label>
+  </div>
 
-  <label>
-    Password:
-    <input type = 'password' name = 'password'>
-  </label>
+  <div>
+    <label>
+      Password:
+      <input type = 'password' name = 'password' th:value="${user.password}">
+      <span th:errors="${user.password}"></span>
+    </label>
+  </div>
 
-  <label>
-    Verify Password:
-    <input type = 'password' name = 'verify'>
-  </label>
+  <div>
+    <label>
+      Verify Password:
+      <input type = 'password' name = 'verify' th:value="${user.verify}">
+      <span th:errors="${user.verify}"></span>
+    </label>
+  </div>
 
   <p th:text="${error}"></p>
 
